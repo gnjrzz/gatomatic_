@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="icon.png">
+  <title>Form Pemesanan</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="text-gray-800">
+
+  <!-- Navbar -->
+  <header class="navbar">
+		<div class="logo">Gatomatic</div>
+	
+		<!-- Hamburger Icon -->
+		<div class="hamburger" onclick="document.querySelector('.navbar').classList.toggle('active')">
+		  <span></span>
+		  <span></span>
+		  <span></span>
+		</div>
+	
+		<!-- Navigation Menu -->
+		<nav class="menu">
+		  <a href="index.html">Beranda</a>
+		  <a href="produk.html">Produk</a>
+		  <a href="tentang.html">Tentang Kami</a>
+		  <a href="pembelian.html">Pembelian</a>
+		</nav>
+    <!-- Auth Buttons -->
+		<div class="auth-buttons button-group">
+		  <div class="highlight-bg"></div>
+		  <a href="login.html" class="tab login">Log in</a>
+		  <a href="pembelian.html" class="tab buy">Buy Now</a>
+		</div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="pt-32 px-4">
+    <section class="bg-white shadow-2xl rounded-2xl p-8 max-w-5xl mx-auto">
+      <h2 class="text-2xl font-bold text-blue-700 text-center mb-1">FORM PEMESANAN</h2>
+      <p class="text-center text-gray-500 mb-6">Silahkan isi form berikut untuk melakukan pemesanan</p>
+
+      <div class="bg-blue-50 p-6 rounded-xl mb-8 shadow">
+        <h3 class="text-lg font-semibold text-blue-800 mb-4">INFORMASI PRODUK</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block mb-1">Nama Produk</label>
+            <input type="text" value="GATOMATIC" readonly class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm"/>
+          </div>
+          <div>
+            <label class="block mb-1">Jumlah</label>
+            <input type="number" value="1" class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm"/>
+          </div>
+          <div>
+            <label class="block mb-1">Harga Satuan</label>
+            <input type="text" value="Rp 2.000.000" readonly class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm"/>
+          </div>
+          <div>
+            <label class="block mb-1">Total Harga</label>
+            <input type="text" value="Rp 2.000.000" readonly class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm"/>
+          </div>
+        </div>
+      </div>
+
+      <form>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <input type="text" placeholder="Nama Lengkap" required class="px-4 py-2 border border-gray-300 rounded-lg"/>
+          <input type="text" placeholder="No. WhatsApp" required class="px-4 py-2 border border-gray-300 rounded-lg"/>
+          <input type="email" placeholder="Email" required class="px-4 py-2 border border-gray-300 rounded-lg"/>
+          <select required class="px-4 py-2 border border-gray-300 rounded-lg">
+            <option disabled selected>Pilih Provinsi</option>
+          </select>
+          <select required class="px-4 py-2 border border-gray-300 rounded-lg">
+            <option disabled selected>Pilih Kota/Kabupaten</option>
+          </select>
+          <select required class="px-4 py-2 border border-gray-300 rounded-lg">
+            <option disabled selected>Pilih Kecamatan</option>
+          </select>
+        </div>
+        <textarea placeholder="Alamat Lengkap" required class="w-full mt-4 px-4 py-2 border border-gray-300 rounded-lg h-24 resize-none"></textarea>
+        <input type="text" placeholder="Kode Pos" class="w-full mt-4 px-4 py-2 border border-gray-300 rounded-lg"/>
+        <textarea placeholder="Catatan Pembeli" class="w-full mt-4 px-4 py-2 border border-gray-300 rounded-lg h-24 resize-none"></textarea>
+
+        <h3 class="text-lg font-semibold text-blue-800 mt-6 mb-3">METODE PEMBAYARAN</h3>
+        <div class="space-y-4">
+          <label class="flex items-center gap-2">
+            <input type="radio" name="payment" checked /> Transfer Bank
+          </label>
+          <div class="pl-6 space-y-2 text-sm text-gray-600">
+            <label class="block"><input type="radio" name="bank" /> BCA - 1234567890 (GATOMATIC)</label>
+            <label class="block"><input type="radio" name="bank" /> BRI - 9876543210 (GATOMATIC)</label>
+            <label class="block"><input type="radio" name="bank" /> Mandiri - 5678901234 (GATOMATIC)</label>
+          </div>
+          <label class="flex items-center gap-2">
+            <input type="radio" name="payment" /> E-Wallet
+          </label>
+        </div>
+
+        <button type="submit" class="mt-6 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">KIRIM PESANAN</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-blue-900 text-white py-12 mt-20">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8"> 
+      <div>
+        <img src="gatomatic-logo.png" alt="Gatomatic" width="150" height="31" loading="lazy">
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Gerbang Otomatis</h3>
+        <p class="mb-4">Solusi cerdas untuk menghemat waktu dan tenaga.</p>
+        <div class="flex space-x-4">
+          <a href="#"><i class="fab fa-facebook-f text-xl hover:text-blue-200"></i></a>
+          <a href="#"><i class="fab fa-instagram text-xl hover:text-blue-200"></i></a>
+          <a href="#"><i class="fab fa-linkedin-in text-xl hover:text-blue-200"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-xl font-bold mb-4">Kontak</h3>
+        <p class="flex items-start mb-3"><i class="fas fa-map-marker-alt mr-2 mt-1"></i>Jl. Letjend Pol. Soemarto, Watumas, Purwanegara, Kec. Purwokerto Utara, Kab. Banyumas, Jawa Tengah 53127</p>
+        <p class="flex items-center mb-3"><i class="fas fa-phone mr-2"></i> +62 123 4567 890</p>
+        <p class="flex items-center"><i class="fas fa-envelope mr-2"></i> cs@Gatomatic.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
